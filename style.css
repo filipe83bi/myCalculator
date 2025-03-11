@@ -1,9 +1,6 @@
 body {
   background-color: var(--primary);
-}
-
-body{
-  margin: 50rem 0;
+  padding-bottom: 30rem;
 }
 
 .main-container {
@@ -93,6 +90,7 @@ body{
   .input-section {
     width: 35rem;
     height: 35rem;
+    margin: 3rem 0;
     font-size: 2.8rem;
   }
   .diplay-result {
