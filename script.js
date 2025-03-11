@@ -13,6 +13,7 @@ const calculate = function (firstNumber, secondNumber) {
   secondNumber = Number(secondNumberInput.value);
   const operator = operatorInput.value;
 
+  if(!operator) return;
   if (operator === "+") result = firstNumber + secondNumber;
   if (operator === "-") result = firstNumber - secondNumber;
   if (operator === "*") result = firstNumber * secondNumber;
