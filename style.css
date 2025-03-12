@@ -5,7 +5,7 @@ body {
 
 .main-container {
   margin: 0 auto;
-  max-width: 470px;
+  width: 700px;
   text-align: center;
   color: var(--white);
   display: flex;
@@ -16,8 +16,8 @@ body {
 
 .input-section {
   margin-top: 5rem;
-  width: 45rem;
-  height: 30rem;
+  width: 65rem;
+  height: 45rem;
   background-color: var(--primary-tint-2);
   padding: 2rem;
   border-radius: 2rem;
@@ -28,12 +28,12 @@ body {
 }
 
 #header {
-  font-size: 3.8rem;
+  font-size: 6.1rem;
   padding-bottom: 2rem;
 }
 
 #result {
-  font-size: 2.1rem;
+  font-size: 2.8rem;
 }
 
 .input {
@@ -56,6 +56,11 @@ body {
 
 .input::placeholder {
   text-align: center;
+  font-size: 2rem;
+}
+
+.input:focus {
+  font-size: 2rem;
 }
 
 #operator {
@@ -69,7 +74,7 @@ body {
 
 #button {
   width: 20rem;
-  height: 3rem;
+  height: 4rem;
   border-radius: 2rem;
   color: var(--white);
   font-size: 2.1rem;
@@ -83,6 +88,23 @@ body {
   border-radius: 2rem;
   background-color: var(--primary-tint);
   color: var(--white);
+}
+
+@media (max-width: 900px) {
+  .main-container {
+    max-width: 470px;
+  }
+  .input-section {
+    width: 45rem;
+    height: 30rem;
+  }
+  #header {
+    font-size: 3.8rem;
+  }
+
+  #result {
+    font-size: 2.1rem;
+  }
 }
 
 @media (max-width: 480px) {
