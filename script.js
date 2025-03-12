@@ -1,25 +1,64 @@
 "use strict";
 
-const firstNumberInput = document.getElementById("first-number");
-const secondNumberInput = document.getElementById("second-number");
-const operatorInput = document.getElementById("operator");
+const firstNumberElement = document.getElementById("first-number");
+const secondNumberElement = document.getElementById("second-number");
+const operatorElement = document.getElementById("operator");
 const button = document.getElementById("button");
-const resultInputArea = document.getElementById("result");
+const resultElementArea = document.getElementById("result");
 
 const calculate = function (firstNumber, secondNumber) {
   let result;
 
-  firstNumber = Number(firstNumberInput.value);
-  secondNumber = Number(secondNumberInput.value);
-  const operator = operatorInput.value;
+  firstNumber = Number(firstNumberElement.value);
+  secondNumber = Number(secondNumberElement.value);
+  const operator = operatorElement.value;
 
-  if(!operator) return;
-  if (operator === "+") result = firstNumber + secondNumber;
-  if (operator === "-") result = firstNumber - secondNumber;
-  if (operator === "*") result = firstNumber * secondNumber;
-  if (operator === "/") result = firstNumber / secondNumber;
+  if (isNaN(firstNumber) || isNaN(secondNumber)) {
+    resultElementArea.innerText = `Please enter a valid number`;
+    return;
+  }
 
-  resultInputArea.innerText = "Result: " + result;
+  if (firstNumber === 0) {
+    resultElementArea.innerText = "The first number cannot be 0";
+    return;
+  }
+
+  switch (operator) {
+    case "+":
+      result = firstNumber + secondNumber;
+      break;
+    case "-":
+      result = firstNumber - secondNumber;
+      break;
+    case "*":
+      result = firstNumber * secondNumber;
+      break;
+    case "/":
+      if (secondNumber === 0) {
+        resultElementArea.innerText = "Division bei 0 is not allowed";
+        return;
+      } else {
+        result = firstNumber / secondNumber;
+      }
+      break;
+    default:
+      resultElementArea.innerText = `Invalid operator`;
+  }
+
+  // //If else statements
+
+  // if (operator === "+") result = firstNumber + secondNumber;
+  // else if (operator === "-") result = firstNumber - secondNumber;
+  // else if (operator === "*") result = firstNumber * secondNumber;
+  // else if (operator === "/") {
+  //   if (secondNumber === 0) {
+  //     resultElementArea.innerText = "Division bei 0 is not allowed";
+  //     return;
+  //   } else {
+  //     result = firstNumber / secondNumber;
+  //   }
+  // }
+  resultElementArea.innerText = `Result: ${result}`;
 };
 
 button.addEventListener("click", calculate);
