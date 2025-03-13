@@ -6,13 +6,11 @@ const operatorElement = document.getElementById("operator");
 const button = document.getElementById("button");
 const resultElementArea = document.getElementById("result");
 
-firstNumberElement.addEventListener("keydown", (e) => {
-  console.log(e);
-  if (e.key === "0") {
-    resultElementArea.innerText = `0 can not be the first number.`;
-    firstNumberElement.value = "";
-    return;
-  }
+firstNumberElement.addEventListener('input', function () {
+if (Number(firstNumberElement.value) === 0) {
+firstNumberElement.value = '';
+resultElementArea.innerText = 'The first number cannot be 0';
+}
 });
 
 const calculate = function (firstNumber, secondNumber) {
